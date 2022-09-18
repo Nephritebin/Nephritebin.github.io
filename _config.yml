@@ -1,10 +1,10 @@
 # Site settings
 title: Land of the Lustrous
 SEOTitle: 宝石之国 | Land of the Lustrous
-header-img: img/hm-violet.jpg
+header-img: img/hm-phos.jpg
 email: yubinliu925@gmail.com
-description: "这里是 @Yubin Liu 的个人博客，与你一起发现更大的世界 | 独立之精神，自由之思想"
-keyword: "Yubin Liu, Robotics, Anime, Japanese, Phosphophyllite"
+description: "这里是 @Yubin Liu 的个人博客，也是保存每一颗宝石的地方 | 独立之精神，自由之思想"
+keyword: "Yubin Liu, Robotics, Anime, Japanese, Land of the Lustrous, Phosphophyllite"
 url: "https://nephritebin.github.io/" # your host, for absolute URL
 baseurl: "" # for example, '/blog' if your blog hosted on 'host/blog'
 
@@ -13,10 +13,10 @@ future: true
 
 # SNS settings
 RSS: false
-weibo_username: huxpro
-zhihu_username: huxpro
-github_username: huxpro
-twitter_username: huxpro
+weibo_username: u/6367716963
+zhihu_username: wen-run-ru-yu-89-86
+github_username: Nephritebin
+twitter_username: yubinliu925
 #facebook_username:  huxpro
 #linkedin_username:  firstname-lastname-idxxxx
 
@@ -59,7 +59,7 @@ kramdown:
       start_line: 1
 
 # Disqus settings
-disqus_username: hux
+disqus_username: Nephrite
 
 # Netease settings
 netease_comment: false
@@ -69,12 +69,11 @@ netease_comment: false
 # ba_track_id: [your track id]
 
 # Google Analytics
-ga_track_id: "UA-49627206-1" # Format: UA-xxxxxx-xx
-ga_domain: huangxuan.me
-
+ga_track_id: "G-LM0KVR8XBG" # Format: UA-xxxxxx-xx
+ga_domain: auto
 # Sidebar settings
 sidebar: true # whether or not using Sidebar.
-sidebar-about-description: "独立之精神，自由之思想 <br> React Team @ Meta"
+sidebar-about-description: "独立之精神，自由之思想 <br> Morganite"
 sidebar-avatar: https://github.com/Nephritebin.png # use absolute URL, seeing it's used in both `/` and `/about/`
 
 # Featured Tags
