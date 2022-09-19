@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      "Coming to the land of the lustrous"
+title:      "Welcome to the land of the lustrous"
 subtitle:   " \"Hello World, Hello Blog\""
 date:       2022-09-19 12:00:00
 author:     "Yubin"
