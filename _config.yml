@@ -59,7 +59,7 @@ kramdown:
       start_line: 1
 
 # Disqus settings
-disqus_username: Nephrite
+disqus_username: Nephritebin
 
 # Netease settings
 netease_comment: false
@@ -73,8 +73,8 @@ ga_track_id: "G-LM0KVR8XBG" # Format: UA-xxxxxx-xx
 ga_domain: auto
 # Sidebar settings
 sidebar: true # whether or not using Sidebar.
-sidebar-about-description: "独立之精神，自由之思想 <br> Morganite"
-sidebar-avatar: https://github.com/Nephritebin.png # use absolute URL, seeing it's used in both `/` and `/about/`
+sidebar-about-description: "独立之精神，自由之思想 <br> Phosphophyllite"
+sidebar-avatar: img/phos.jpg # use absolute URL, seeing it's used in both `/` and `/about/`
 
 # Featured Tags
 featured-tags: true # whether or not using Feature-Tags

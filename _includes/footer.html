@@ -115,7 +115,7 @@
 </script>
 
 
-<!-- Google Analytics -->
+<!-- Google Analytics
 {% if site.ga_track_id %}
 <script>
     // dynamic User by Hux
@@ -133,8 +133,19 @@
     ga('create', _gaId, _gaDomain);
     ga('send', 'pageview');
 </script>
-{% endif %}
+{% endif %} -->
 
+<!-- Google tag (gtag.js) -->
+{% if site.ga_track_id %}
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GRVTQK86R5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', '{{ site.ga_track_id }}');
+</script>
+{% endif %}
 
 <!-- Baidu Tongji -->
 {% if site.ba_track_id %}
