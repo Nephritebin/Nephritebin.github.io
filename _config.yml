@@ -66,7 +66,7 @@ netease_comment: false
 
 # Analytics settings
 # Baidu Analytics
-# ba_track_id: [your track id]
+ba_track_id: f648daa436463e8032769b4193bdcff1
 
 # Google Analytics
 ga_track_id: "G-LM0KVR8XBG" # Format: UA-xxxxxx-xx
