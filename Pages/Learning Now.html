@@ -1,23 +1,16 @@
 ---
 layout: page
-title: "About me"
-description: "Live Long and Prosper"
-header-img: "img/Configurations/about.jpg"
+title: "Learning Now"
+description: "Find Your Own Serendipity"
+header-img: "img/Configurations/learning.png"
 header-mask: 0.3
 multilingual: true
 ---
 
-{% include multilingual-sel.html %}
-
-<!-- Chinese Version -->
-<div class="zh post-container">
-    {% capture about_zh %}{% include about/zh.md %}{% endcapture %}
-    {{ about_zh | markdownify }}
-</div>
 
 <!-- English Version -->
 <div class="en post-container">
-    {% capture about_en %}{% include about/en.md %}{% endcapture %}
+    {% capture about_en %}{% include learning/README.md %}{% endcapture %}
     {{ about_en | markdownify }}
 </div>
 
