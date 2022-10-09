@@ -52,7 +52,9 @@ Yubin 的 Blog 就这么开通了。
 
 ## 调试与修改
 
-一个模版的文件包括各种JavaScript，css，html 和 Markdown文件，一般来说我们需要定义和修改的东西大部分都在`_config.yml`里面，发布的内容一般用 Markdown 写在 `_post`文件夹里，如果愿意折腾的话也可以修改模版的 html 文件。以下以 Hux 大神提供的 [Jekyll 模板](https://github.com/Huxpro/huxpro.github.io)为例进行说明，大致需要改动的地方可以参考模版的说明文档，下面对部分中文文档进行引用。
+一个模版的文件包括各种JavaScript，css，html 和 Markdown文件，一般来说我们需要定义和修改的东西大部分都在`_config.yml`里面，发布的内容一般用 Markdown 写在 `_post`文件夹里，如果愿意折腾的话也可以修改模版的 html 文件。以下以 Hux 大神提供的 [Jekyll 模板](https://github.com/Huxpro/huxpro.github.io)为例进行说明，大致需要改动的地方可以参考模版的[说明文档](https://github.com/Huxpro/huxpro.github.io/blob/master/_doc/README.zh.md)。
+
+值得注意的是，`Latex` 的支持和 Google Analytics 由于更新，需要自行改动原 `html`代码才能生效，具体的详细内容可以看我的Github改动的commit。
 
 ## 测试与例子
 
