@@ -1,10 +1,10 @@
 ---
 layout:     post
-title:      "Deep Reinforcement Learning I"
+title:      "Deep Reinforcement Learning III"
 subtitle:   "Model-Based Reinforcement Learning"
 date:       2022-10-24 15:00:00
 author:     "Yubin"
-header-img: "img/Notes/2022-10/head-nichijo.jpg"
+header-img: "img/Headers/grossgasteiger.jpg"
 mathjax: true
 catalog: true
 tags:
@@ -28,7 +28,7 @@ $$
 \theta^{\star}=\arg \max _\theta E_{\tau \sim p_\theta(\tau)}\left[\sum_t r\left(\mathbf{s}_t, \mathbf{a}_t\right)\right]
 $$
 
-In the algorithms we have learned so far, we assumed a model-free formulation, which meaning that we assume that $p\left(\mathbf{s}_{t+1} | \mathbf{s}_t, \mathbf{a}_t\right)$ is unknown, and we don't even attempt to learn it. So these were all algorithms that managed to get away with only sampling from that along full trajectories.
+In the algorithms we have learned so far, we assumed a model-free formulation, which meaning that we assume that $p\left(\mathbf{s}_{t+1} \mid \mathbf{s}_t, \mathbf{a}_t\right)$ is unknown, and we don't even attempt to learn it. So these were all algorithms that managed to get away with only sampling from that along full trajectories.
 
 But what if we knew the transition dynamics? Actually often we do know the dynamics, for example, in Games (e.g., Atari games, chess, Go), easily modeled systems (e.g., navigating a car) or simulated environments (e.g., simulated robots, video games). 
 
@@ -41,7 +41,7 @@ Model-based reinforcement learning refers to a way of approaching reinforcement 
 
 During the deterministic case, the environment tells the robot what the state your robot is in,  and then the agent perform an optimization given their state $\mathbf{s}_1$, can they imagine a sequence of actions that will minimize the total cost:
 
-![](..\img\Notes\2022-10\1.png)
+![Open Loop Control](/img/Notes/2022-10/1.png)
 
 $$
 \mathbf{a}_1, \ldots, \mathbf{a}_T=\arg \max _{\mathbf{a}_1, \ldots, \mathbf{a}_T} \sum_{t=1}^T r\left(\mathbf{s}_t, \mathbf{a}_t\right) \text { s.t. } \mathbf{a}_{t+1}=f\left(\mathbf{s}_t, \mathbf{a}_t\right)

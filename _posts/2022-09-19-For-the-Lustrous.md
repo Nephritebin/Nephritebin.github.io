@@ -4,7 +4,7 @@ title:      "My First Blog"
 subtitle:   " \"Hello World, Hello Blog\""
 date:       2022-09-19 12:00:00
 author:     "Yubin"
-header-img: "img/Notes/2022-09/head-5-seconds.jpg"
+header-img: "img/Headers/head-5-seconds.jpg"
 mathjax: true
 catalog: true
 tags:

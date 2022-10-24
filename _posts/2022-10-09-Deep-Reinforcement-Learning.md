@@ -4,7 +4,7 @@ title:      "Deep Reinforcement Learning I"
 subtitle:   "Basics and Model-Free Reinforcement Learning"
 date:       2022-10-09 12:00:00
 author:     "Yubin"
-header-img: "img/Notes/2022-10/head-nichijo.jpg"
+header-img: "img/Headers/head-nichijo.jpg"
 mathjax: true
 catalog: true
 tags:
