@@ -38,3 +38,12 @@ Model-based reinforcement learning refers to a way of approaching reinforcement 
 
 
 ## Optimal Control and Planning
+
+During the deterministic case, the environment tells the robot what the state your robot is in,  and then the agent perform an optimization given their state $\mathbf{s}_1$, can they imagine a sequence of actions that will minimize the total cost:
+
+![](..\img\Notes\2022-10\1.png)
+
+$$
+\mathbf{a}_1, \ldots, \mathbf{a}_T=\arg \max _{\mathbf{a}_1, \ldots, \mathbf{a}_T} \sum_{t=1}^T r\left(\mathbf{s}_t, \mathbf{a}_t\right) \text { s.t. } \mathbf{a}_{t+1}=f\left(\mathbf{s}_t, \mathbf{a}_t\right)
+$$
+
