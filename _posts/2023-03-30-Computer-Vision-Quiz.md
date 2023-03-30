@@ -2,7 +2,7 @@
 layout:     post
 title:      "Quiz answers for 16-385 Computer Vision"
 subtitle:   "Full of stars"
-date:       2023-03-30 12:00:00
+date:       2023-03-30 01:00:00
 author:     "Yubin"
 header-img: "img/Headers/mio.jpg"
 mathjax: true
