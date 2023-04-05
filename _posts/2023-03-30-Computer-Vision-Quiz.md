@@ -888,7 +888,8 @@ The solution and algorithm procedure is also similarly as question 1. However, t
 
 ### Question 3
 
-The first-order Taylor expansion of the composite function $T(\textbf{W}(\textbf{x}, \Delta \textbf{p}))$ with respect to $\Delta \textbf{p}$ around the value $0$ is:
+The first-order Taylor expansion of the composite function $ T(\textbf{W}(\textbf{x}, \Delta \textbf{p})) $ with respect to $\Delta \textbf{p}$ around the value $0$ is:
+
 $$
 T(\textbf{W}(\textbf{x}, \Delta \textbf{p})) \approx
 T(\textbf{W}(\textbf{x}, \textbf{0})) + 

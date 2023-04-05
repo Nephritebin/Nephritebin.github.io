@@ -4,6 +4,6 @@ During my free time, I love to travel and explore new places, especially museums
 
 ![Mountain Fuji](/img/Interests/fujisan.jpg)
 
-I'm also a person who likes anime. My favorite animation is land of lustrous, which is also the name of this website. Other series I like include K-ON, Violet Evergarden, 5 Centimeters Per Second and recently Laid-Back Camp. You may find that I am a fun of Kyoto Animation Company, since I use a lot of images from there animations to be the covers of my blogs (◍•ᴗ•◍).
+I'm also a person who likes anime. My favorite animation is land of lustrous, which is also the name of this website. Other series I like include K-ON, Violet Evergarden, 5 Centimeters Per Second and recently Laid-Back Camp. You may find that I am a fan of Kyoto Animation Company, since I use a lot of images from there animations to be the covers of my blogs (◍•ᴗ•◍).
 
 ![K-ON](/img/Interests/kon.jpg)
