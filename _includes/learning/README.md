@@ -1,3 +1,3 @@
 # Learning and Doing
 
-Wait for update
+Waiting for update
