@@ -73,12 +73,12 @@ ga_track_id: "G-LM0KVR8XBG" # Format: UA-xxxxxx-xx
 ga_domain: auto
 # Sidebar settings
 sidebar: true # whether or not using Sidebar.
-sidebar-about-description: "独立之精神，自由之思想 <br> Phosphophyllite"
+sidebar-about-description: "独立之精神，自由之思想 <br> Phosphophyllite <br> yubinliu925@gmail.com"
 sidebar-avatar: /img/Configurations/phos.jpg # use absolute URL, seeing it's used in both `/` and `/about/`
 
 # Featured Tags
 featured-tags: true # whether or not using Feature-Tags
-featured-condition-size: 1 # A tag will be featured if the size of it is more than this condition value
+featured-condition-size: 2 # A tag will be featured if the size of it is more than this condition value
 
 # Progressive Web Apps
 chrome-tab-theme-color: "#000000"
