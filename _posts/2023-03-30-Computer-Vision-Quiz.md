@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      "Quiz answers for 16-385 Computer Vision"
-subtitle:   "Full of stars"
+subtitle:   "Some interesting small questions for computer vision"
 date:       2023-03-30 01:00:00
 author:     "Yubin"
 header-img: "img/Headers/mio.jpg"
@@ -9,6 +9,7 @@ mathjax: true
 catalog: true
 tags:
     - Computer Vision
+    - Online Courses
 ---
 
 # Answers

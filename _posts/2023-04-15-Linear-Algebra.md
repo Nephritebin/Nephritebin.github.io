@@ -2,7 +2,7 @@
 layout:     post
 title:      "Essense of Linear Algebra"
 subtitle:   "A brief note for 3Blue1Brown videos"
-date:       2023-04-15 00:00:00
+date:       2022-12-15 00:00:00
 author:     "Yubin"
 header-img: "img/Headers/65595167.jpg"
 mathjax: true
