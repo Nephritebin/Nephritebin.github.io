@@ -488,7 +488,7 @@ $$
 
 ### Question 2
 
-For Lambertian surface, $\forall \hat{\textbf{v}}_i$, $f_r(\hat{\textbf{v}}_i, \hat{\textbf{v}}_o)$ are the same. $obviously we have $\rho\geq 0$, we want to derive that $\rho \leq 1$,
+For Lambertian surface, $\forall \hat{\textbf{v}}_i$, $f_r(\hat{\textbf{v}}_i, \hat{\textbf{v}}_o)$ are the same. Obviously we have $\rho\geq 0$, we want to derive that $\rho \leq 1$,
 which means we just need to prove:
 
 $$

@@ -27,7 +27,7 @@ $$
 
 The following passage from Howe[<sup>3</sup>](#refer-anchor-3) may serve us to illustrate what we leave behind:
 
->Amazingly, the group G is almost completely determined by g and its Lie bracket. Thus for many purposes one can replace G with g. Since G is a complicated nonlinear object and g is just a vector space, it is usually vastly simpler to work with g. This is one source of the power of Lie theory.”
+>Amazingly, the group $G$ is almost completely determined by $\mathfrak{g}$ and its Lie bracket. Thus for many purposes one can replace $G$ with $\mathfrak{g}$. Since $G$ is a complicated nonlinear object and $\mathfrak{g}$ is just a vector space, it is usually vastly simpler to work with $\mathfrak{g}$. This is one source of the power of Lie theory.”
 
 ## What is a Lie Group?
 
@@ -35,7 +35,7 @@ The following passage from Howe[<sup>3</sup>](#refer-anchor-3) may serve us to i
 
 >Rotation criterion: A rotation about $O$ in $\mathbb{R}^{3\times 3}$ is a linear transformation that preserves length and orientation. An $3\times 3$ real matrix $A$ represents a rotation of $\mathbb{R}^{3\times 3}$ if and only if $AA^T = 1$ and $\det(A) = 1$.
 
-如同三维欧式空间中，到原点距离为$1$的点构成了一个单位球一样，这些行列式为$1$的三维正交矩阵也在这个矩阵空间构成了一个图形，我们无法把它很准确的可视化出来，不过不妨将它想象成一个特殊的球，球上的每一个点都代表了一个三维旋转矩阵。设想我们在三维空间从初始坐标轴开始旋转一个物体，这个物体的位姿在空间可以很自然的连续变化，而因此作用于这一物体的旋转变换也可以连续的在之前提到的“特殊的球”上移动。（$\det(A) = 1$是必须的，如果没有这个条件的话就不连续了，可以想想为什么）可以证明[<sup>1</sup>](#refer-anchor-1)：
+如同三维欧式空间中，到原点距离为$1$的点构成了一个单位球一样，这些行列式为$1$的三维正交矩阵也在这个矩阵空间构成了一个图形，我们无法把它很准确的可视化出来，不过不妨将它想象成一个特殊的球，球上的每一个点都代表了一个三维旋转矩阵。设想我们在三维空间从初始坐标轴开始旋转一个物体，这个物体的位姿在空间可以很自然的连续变化，而因此作用于这一物体的旋转变换也可以连续的在之前提到的“特殊的球”上移动。这个图形是联通的，（$\det(A) = 1$是必须的，如果没有这个条件的话就不联通了）可以证明[<sup>1</sup>](#refer-anchor-1)：
 
 >Path connectedness of $SO(3)$: $SO(3)$ is path-connected, that is, if we view $3\times 3$ matrices as points of $\mathbb{R}^9$ in the natural way-by interpreting the $3\times 3$ matrices as the coordinates of a point, then any two points in $SO(3)$ may be connected by a continuous path.
 
@@ -43,7 +43,7 @@ The following passage from Howe[<sup>3</sup>](#refer-anchor-3) may serve us to i
 
 >$SO(3)$ is a finite dimensional smooth manifold $G$ together with a group structure on $G$, such that the multiplication $G\times G\rightarrow G$ and the attaching of an inverse $g\rightarrow g^{−1}: G\rightarrow G$ are smooth maps.
 
-这里我们没有定义光滑流形，但直觉上讲，光滑流形就是一个连续的，不会尖锐突变的形状，例如，Euclid 空间 $\mathbb{R}^n$是最简单的光滑流形。$SO(3)$作为一个群，同时又是一个光滑流形，我们称这样的群为李群。事实上，二维旋转矩阵，二维齐次变换矩阵，三维齐次变换矩阵都构成了李群。至此，我们回答了本节的题目，李群是一个具有群结构的光滑流形，群结构使我们可以在这个流行上进行计算，而光滑则保证了李群上可以定义微积分。
+这里我们没有定义光滑流形，但直觉上讲，光滑流形就是一个连续的，不会尖锐突变的形状，这个条件保证了这样的流形可以实现求导。例如，Euclid 空间 $\mathbb{R}^n$是最简单的光滑流形。$SO(3)$作为一个群，同时又是一个光滑流形，我们称这样的群为李群。事实上，二维旋转矩阵，二维齐次变换矩阵，三维齐次变换矩阵都构成了李群。至此，我们回答了本节的题目，李群是一个具有群结构的光滑流形，群结构使我们可以在这个流行上进行计算，而光滑则保证了李群上可以定义微积分。
 
 ![Rotation](/img/Notes/2023-05/rr.png)
 
@@ -51,7 +51,21 @@ The following passage from Howe[<sup>3</sup>](#refer-anchor-3) may serve us to i
 
 ## From Lie group to Lie algebra
 
+对于一个旋转变换而言，一般来说三个参数就足以表示。事实上，对于旋转矩阵表示，它的自由度为$9-6=3$；对于欧拉角表示，3个角度足以；对于单位四元数描述，它的自由度同样为$4-1=3$。这表明了每一个旋转矩阵都与一个三维向量一一对应，虽然目前我们还不知道这个对应关系如何寻找。旋转矩阵对应的三维向量正是$SO(3)$ Lie Group 对应的 Lie algebra，这一节我们来寻找它们之间的关系。
+
 ![Rotation](/img/Notes/2023-05/lie.png)
+
+![BCH](/img/Notes/2023-05/bch.png)
+
+## Summary
+
+到这里，我们可以回答第一节的问题了，如何寻找一个合理的$\Delta \mathbf{R}$。考虑一个三维旋转$f: SO(3)\rightarrow \mathbb{R}^3$，$f(\textbf{R})=\textbf{Rp}$
+
+## Appendix
+
+在这里，我们附加一个对$()^\wedge$运算符性质的证明：
+
+>对任意旋转矩阵$\mathbf{R}$ 和三维向量 $\mathbf{v}$，都有：$(\mathbf{Rv})^\wedge=\mathbf{Rv}^\wedge\mathbf{R}^T$
 
 
 ## 参考
