@@ -91,7 +91,7 @@ page-mathjax: True
 friends:
   [
     { title: "Mio Kagura", href: "https://kagurua.com/" },
-    # { title: "Ebn Zhang", href: "https://ebnbin.dev/" },
+    { title: "Douge Fu", href: "https://dougefla.github.io/" },
     # { title: "Kun Qian", href: "http://kunq.me" },
     # { title: "Sherry Woo", href: "https://sherrywoo.me/" },
     # { title: "SmdCn", href: "http://blog.smdcn.net" },
