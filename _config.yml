@@ -90,7 +90,7 @@ page-mathjax: True
 # Friends
 friends:
   [
-    # { title: "乱序（Midare）", href: "http://mida.re/" },
+    { title: "Mio Kagura", href: "https://kagurua.com/" },
     # { title: "Ebn Zhang", href: "https://ebnbin.dev/" },
     # { title: "Kun Qian", href: "http://kunq.me" },
     # { title: "Sherry Woo", href: "https://sherrywoo.me/" },
