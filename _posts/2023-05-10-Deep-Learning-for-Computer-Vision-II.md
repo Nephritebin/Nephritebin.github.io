@@ -2,11 +2,12 @@
 layout:     post
 title:      "Deep Learning for Computer Vision II"
 subtitle:   "Self note for CS231n course"
-date:       2023-05-10 00:00:00
+date:       2023-10-10 00:00:00
 author:     "Yubin"
 header-img: "img/Headers/wallhaven-m9j7rm.jpg"
 mathjax: true
 catalog: true
+published: false
 tags:
     - Computer Vision
     - Deep Learning
