@@ -7,7 +7,7 @@ author:     "Yubin"
 header-img: "img/Headers/wallhaven-m9j7rm.jpg"
 mathjax: true
 catalog: true
-published: false
+published: true
 tags:
     - Computer Vision
     - Deep Learning
@@ -29,14 +29,12 @@ CONV3, CONV4, CONV5, Max POOL3, FC6, FC7, FC8
 
 Input: $227\times 227\times 3$ images
 
--   First layer (CONV1): $96\ 11\times11$ filters applied at stride 4, so the output volume is $55\times 55\times 96$.
-
--   Second layer (POOL1): 3x3 filters applied at stride 2, so the output volume is $27\times 27\times 96$.
+-  First layer (CONV1): $96\ 11\times11$ filters applied at stride 4, so the output volume is $55\times 55\times 96$.
+-  Second layer (POOL1): 3x3 filters applied at stride 2, so the output volume is $27\times 27\times 96$.
 
 Historical note: Trained on GTX 580GPU with only 3 GB of memory. Network spread across 2 GPUs, half the neurons (feature maps) on each GPU.
 
-![](/img/Notes/2023-05/cs231n/image-20210427004558801.png)20210427004558801" style="zoom: 67%;" />
-
+![](/img/Notes/2023-05/cs231n/image-20210427004558801.png)
 
 
 **ZFNet [Zeiler and Fergus, 2013]**
@@ -51,11 +49,9 @@ Stack of three $3\times3$ conv (stride 1) layers has same **effective receptive 
 
 It has most memory in early convolutional layers and late fully connect layers.
 
-Total memory: approximately 96MB per image
-
-Total parameters: 138M parameters.
-
-FC7 features can generalize well to other tasks.
+- Total memory: approximately 96MB per image
+- Total parameters: 138M parameters.
+- FC7 features can generalize well to other tasks.
 
 **Network in Network [Lin et al., 2014]**
 
@@ -71,13 +67,13 @@ It only have 5 million parameters which is 12 times less than AlexNet.
 
 “Inception module”: design a good local network topology (network within a network) and then stack these modules on top of each other. It apply parallel filter operations on the input from previous layer such as multiple receptive field sizes for convolution ($1\times1, 3\times3, 5\times5$) or pooling operation ($3\times3$), and then concatenate all filter outputs together depth-wise.
 
-![](/img/Notes/2023-05/cs231n/image-20210427011722778.png)20210427011722778" style="zoom:50%;" />
+![](/img/Notes/2023-05/cs231n/image-20210427011722778.png)
 
 Problem: computational complexity. Pooling layer also preserves feature depth, which means total depth after concatenation can only grow at every layer!
 
 Solution: using $1\times 1$ convolutional layers to deduce the feature depth 
 
-![](/img/Notes/2023-05/cs231n/image-20210427013111861.png)20210427013111861" style="zoom:50%;" />
+![](/img/Notes/2023-05/cs231n/image-20210427013111861.png)
 
 It has auxiliary classification outputs to inject additional gradient at lower layers.
 
@@ -89,7 +85,7 @@ There is a hypothesis that the problem is an optimization problem and deeper mod
 
 Solution: Use network layers to fit a residual mapping instead of directly trying to fit a desired underlying mapping.
 
-![](/img/Notes/2023-05/cs231n/image-20210427030953230.png)20210427030953230" style="zoom:50%;" />
+![](/img/Notes/2023-05/cs231n/image-20210427030953230.png)
 
 Use layers to fit residual $F(x) = H(x) - x$ instead of $H(x)$ directly.
 
@@ -125,17 +121,19 @@ For deeper networks (ResNet-50+), use “bottleneck” layer to improve efficien
 
 Recurrent Neural Networks: Process Sequences
 
-![](/img/Notes/2023-05/cs231n/image-20210427142950682.png)20210427142950682" style="zoom:50%;" />
+![](/img/Notes/2023-05/cs231n/image-20210427142950682.png)
 
 Recurrent neural network has its  little recurrent core cell, and it will take some input x and feed that into the RNN. RNN  has some internal hidden state, which may be updated every time that the RNN reads a new input. The internal hidden state will be feed back to the model the next time it reads an input.
 
 We can process a sequence of vectors x by applying a recurrence formula at every time step. And the same function and the same set of parameters are used at every time step.
+
 $$
 h_t = f_W(h_{t-1}, x_t)
 $$
+
 **RNN: Computational Graph: Many to Many**
 
-![](/img/Notes/2023-05/cs231n/image-20210427144509326.png)20210427144509326" style="zoom:50%;" />
+![](/img/Notes/2023-05/cs231n/image-20210427144509326.png)
 
  We are reusing the W matrix at every time step of the computation. You will have a separate gradient for W flowing from from each of the time steps, and then the final gradient for W will be the sum of all of these individual per time step gradients.
 
@@ -150,13 +148,13 @@ Example: Character-level Language Model Sampling
 
 Run forward and backward through chunks of the sequence instead of whole sequence. Carry hidden states forward in time forever, but only backpropagate for some smaller number of steps.
 
-![](/img/Notes/2023-05/cs231n/image-20210427203631722.png)20210427203631722" style="zoom:50%;" />
+![](/img/Notes/2023-05/cs231n/image-20210427203631722.png)
 
 Karpathy, Johnson, and Fei-Fei: Visualizing and Understanding Recurrent Networks, ICLR Workshop 2016
 
 **Image captioning**
 
-![](/img/Notes/2023-05/cs231n/image-20210427215029878.png)20210427215029878" style="zoom:50%;" />
+![](/img/Notes/2023-05/cs231n/image-20210427215029878.png)
 
 This model work pretty well when you ask them to caption images that were similar to the training data, but they definitely have a hard time generalizing far beyond that.
 
@@ -166,7 +164,7 @@ RNN focuses its attention at a different spatial location when generating each w
 
 The convolutional network rather than producing a single vector summarizing the entire image, now it produce some grid of vectors that give maybe one vector for each spatial location in the image.
 
-![](/img/Notes/2023-05/cs231n/image-20210427215739889.png)20210427215739889" style="zoom:50%;" />
+![](/img/Notes/2023-05/cs231n/image-20210427215739889.png)
 
 The module will have two outputs, one is the distribution over vocabulary words, the other is the distribution over image locations. This whole process will continue and it will sort of do these two different things at every time step.
 
@@ -178,7 +176,7 @@ Multilayer RNNs
 
  **Vanilla RNN Gradient Flow**
 
-![](/img/Notes/2023-05/cs231n/image-20210427221412989.png)20210427221412989" style="zoom:50%;" />
+![](/img/Notes/2023-05/cs231n/image-20210427221412989.png)
 
 Backpropagation from $h_t$ to $h_{t-1}$ multiplies by $W_{hh}^T$. So computing gradient of $h_0$ involves many factors of $W$. So when the largest singular value < 1, it called vanishing gradients; when the largest singular value > 1, it called exploding gradients.
 
@@ -186,7 +184,7 @@ The method to deal with exploding gradients problem is called gradient clipping,
 
 **Long Short Term Memory (LSTM)**
 
-![](/img/Notes/2023-05/cs231n/image-20210428001650977.png)20210428001650977" style="zoom:50%;" />
+![](/img/Notes/2023-05/cs231n/image-20210428001650977.png)
 
 A common variant on the vanilla RNN is the Long-Short Term Memory (LSTM) RNN. Vanilla RNNs can be tough to train on long sequences due to vanishing and exploding gradients caused by repeated matrix multiplication. LSTMs solve this problem by replacing the simple update rule of the vanilla RNN with a gating mechanism as follows.
 
@@ -239,7 +237,7 @@ Fully Convolutional: Design a network as a bunch of convolutional layers to make
 
 Problem: Convolutions at original image resolution will also be very expensive. So we can design network as a bunch of convolutional layers, with downsampling and upsampling inside the network!
 
-![](/img/Notes/2023-05/cs231n/image-20210420235037122.png)20210420235037122" style="zoom:35%;" />
+![](/img/Notes/2023-05/cs231n/image-20210420235037122.png)
 
 Upsampling
 
@@ -270,31 +268,31 @@ Region based method
 
 R-CNN
 
-![](/img/Notes/2023-05/cs231n/image-20210422140719326.png)20210422140719326" style="zoom:50%;" />
+![](/img/Notes/2023-05/cs231n/image-20210422140719326.png)
 
 The R-CNN has ad hoc training objectives and the training and inference are slow and takes a lot of disk space.
 
 Fast R-CNN
 
-![](/img/Notes/2023-05/cs231n/image-20210422141514750.png)20210422141514750" style="zoom:50%;" />
+![](/img/Notes/2023-05/cs231n/image-20210422141514750.png)
 
 Problem: Runtime dominated by computing region proposals!
 
 Faster R-CNN
 
-![](/img/Notes/2023-05/cs231n/image-20210422141819189.png)20210422141819189" style="zoom:50%;" />
+![](/img/Notes/2023-05/cs231n/image-20210422141819189.png)
 
 Detection without proposals
 
 Yolo/SSD: Rather that doing independent processing for each of these potential regions, instead we want to try to treat this like a regression problem and just make all these predictions all at once with some big convolutional network.
 
-![](/img/Notes/2023-05/cs231n/image-20210422142704522.png)20210422142704522" style="zoom:57%;" />
+![](/img/Notes/2023-05/cs231n/image-20210422142704522.png)
 
 So we can see the object detection as this input of an image and output of a three dimensional tensor, and you can train the whole things with a giant convolutional network.
 
 **Instance Segmentation**
 
-![](/img/Notes/2023-05/cs231n/image-20210422143443353.png)20210422143443353" style="zoom:50%;" />
+![](/img/Notes/2023-05/cs231n/image-20210422143443353.png)
 
 It has very good results, and it can also do pose estimation.
 
@@ -304,7 +302,7 @@ What is going on inside convolutional networks?
 
 **First Layer: Visualize Filters**
 
-![](/img/Notes/2023-05/cs231n/image-20210506181846425.png)20210506181846425" style="zoom:50%;" />
+![](/img/Notes/2023-05/cs231n/image-20210506181846425.png)
 
 You can see a lot of things looking for oriented edges, likes bars of light and dark in various angles  and various positions.   We also can see opposing colors like green and pink or orange and blue. These convolutional networks seem to do something similar as human visual systems at their first layer.
 
@@ -314,7 +312,7 @@ If we draw this exact same visualization for the intermediate convolutional laye
 
 We can record the 4096 dimensional vectors of a small batch of images in the last layer and using nearest neighbors approach in feature space.
 
-![](/img/Notes/2023-05/cs231n/image-20210506185555128.png)20210506185555128" style="zoom:45%;" />
+![](/img/Notes/2023-05/cs231n/image-20210506185555128.png)
 
 The pixels are often quite different between the image in it’s nearest neighbors and feature space. However, the semantic content of those images tends to be similar in this feature space, which means their features in the last layer are capturing some of those semantic content of these images.
 
@@ -332,12 +330,12 @@ Yosinski et al, “Understanding Neural Networks Through Deep Visualization”, 
 
  **Maximally Activating Patches**
 
-Pick a layer and a channel (e. g. conv5 is 128 x 13 x 13, pick channel 17/128) Run many images through the network,
+Pick a layer and a channel (e.g. conv5 is 128 x 13 x 13, pick channel 17/128) Run many images through the network,
 record values of chosen channel and visualize image patches that correspond to maximal activations.
 
 Springenberg et al, “Striving for Simplicity: The All Convolutional Net”, ICLR Workshop 2015
 
-![](/img/Notes/2023-05/cs231n/image-20210506192830208.png)20210506192830208" style="zoom:50%;" />
+![](/img/Notes/2023-05/cs231n/image-20210506192830208.png)
 
 **Occlusion Experiments**
 
@@ -345,7 +343,7 @@ Mask part of the image before feeding to CNN, draw heatmap of probability at eac
 
 Zeiler and Fergus, “Visualizing and Understanding Convolutional Networks”, ECCV 2014
 
-![](/img/Notes/2023-05/cs231n/image-20210506193253991.png)20210506193253991" style="zoom:67%;" />
+![](/img/Notes/2023-05/cs231n/image-20210506193253991.png)
 
 **Saliency Maps**
 
@@ -353,7 +351,7 @@ Simonyan, Vedaldi, and Zisserman, “Deep Inside Convolutional Networks: Visuali
 
 Compute gradient of (unnormalized) class score with respect to image pixels, take absolute value and max over RGB channels. This will directly tell us in this sort of  first order approximation sense. For each pixels in this input image, if we wiggle this pixel a little bit, then how much the classification score for the class change.
 
-![](/img/Notes/2023-05/cs231n/image-20210506194626724.png)20210506194626724" style="zoom:50%;" />
+![](/img/Notes/2023-05/cs231n/image-20210506194626724.png)
 
 When you combine the Saliency Map with a segmentation algorithm called Grabcut, then you can, in fact, sometimes segment out the object in the image.
 
@@ -367,7 +365,7 @@ Zeiler and Fergus, “Visualizing and Understanding Convolutional Networks”, E
 
 Springenberg et al, “Striving for Simplicity: The All Convolutional Net”, ICLR Workshop 2015
 
-![](/img/Notes/2023-05/cs231n/image-20210506201352287.png)20210506201352287" style="zoom:60%;" />
+![](/img/Notes/2023-05/cs231n/image-20210506201352287.png)
 
 **Gradient Ascent**
 
@@ -385,7 +383,7 @@ regularizing: Penalize L2 norm of generated image, Gaussian blur image, Clip pix
 
 Use the same approach to visualize intermediate features
 
-![](/img/Notes/2023-05/cs231n/image-20210506212009313.png)20210506212009313" style="zoom: 50%;" />
+![](/img/Notes/2023-05/cs231n/image-20210506212009313.png)
 
 Adding “multi-faceted” visualization gives even nicer results. (Plus more careful regularization, center-bias)
 
@@ -398,9 +396,9 @@ Rather than synthesizing an image to maximize a specific neuron, instead try to 
 -   Backward: Compute gradient on image
 -   Update image
 
-![](/img/Notes/2023-05/cs231n/image-20210506213117255.png)20210506213117255" style="zoom:70%;" />
+![](/img/Notes/2023-05/cs231n/image-20210506213117255.png)
 
-![](/img/Notes/2023-05/cs231n/image-20210506213138025.png)20210506213138025" style="zoom:57%;" />
+![](/img/Notes/2023-05/cs231n/image-20210506213138025.png)
 
 **Feature Inversion**
 
@@ -409,11 +407,12 @@ Given a CNN feature vector for an image, find a new image that:
 - Matches the given feature vector
 - “looks natural” (image prior regularization)
 
-![](/img/Notes/2023-05/cs231n/image-20210506213238882.png)20210506213238882" style="zoom:47%;" />
+![](/img/Notes/2023-05/cs231n/image-20210506213238882.png)
 
 $$
 \textbf x^* = \arg\max_{H\times W\times C}l(\Phi(\textbf x), \Phi_0) + \lambda R(\textbf x)
 $$
+
 Function $l$ is used to measure the distance between the feature of the new image and the given feature vector. And the total variation regularizing function is used to encourage the spatial smoothness.
 
 Mahendran and Vedaldi, “Understanding Deep Image Representations by Inverting Them”, CVPR 2015
@@ -439,7 +438,7 @@ $$
 -   Compute loss: weighted sum of L2 distance between Gram matrices. Backprop to get gradient on image.
 -   Make gradient step on image and do the same process.
 
-![](/img/Notes/2023-05/cs231n/image-20210506222431911.png)20210506222431911" style="zoom:67%;" />
+![](/img/Notes/2023-05/cs231n/image-20210506222431911.png)
 
 Reconstructing texture from higher layers recovers larger features from the input texture.
 
@@ -447,7 +446,7 @@ Reconstructing texture from higher layers recovers larger features from the inpu
 
 Feature + Gram Reconstruction
 
-![](/img/Notes/2023-05/cs231n/image-20210506220306890.png)20210506220306890" style="zoom:50%;" />
+![](/img/Notes/2023-05/cs231n/image-20210506220306890.png)
 
 Gatys, Ecker, and Bethge, “Image style transfer using convolutional neural networks”, CVPR 2016
 
@@ -481,7 +480,7 @@ Unsupervised Learning: Data: x, Just data, no labels!
 
 Given training data, generate new samples from same distribution.
 
-![](/img/Notes/2023-05/cs231n/image-20210605114024094.png)20210605114024094" style="zoom: 50%;" />
+![](/img/Notes/2023-05/cs231n/image-20210605114024094.png)
 
 Explicit density estimation or Implicit density estimation.
 
@@ -489,14 +488,16 @@ Explicit density estimation or Implicit density estimation.
 -   Generative models of time-series data can be used for simulation and planning (reinforcement learning applications!)
 -   Training generative models can also enable inference of latent representations that can be useful as general features.
 
-![](/img/Notes/2023-05/cs231n/image-20210605114241527.png)20210605114241527" style="zoom:25%;" />
+![](/img/Notes/2023-05/cs231n/image-20210605114241527.png)
 
 **PixelRNN and PixelCNN**
 
 Use chain rule to decompose likelihood of an image x into product of 1-d distributions.
+
 $$
 p(x)=\prod_{i=1}^n p(x_i|x_1,\cdots,x_{i-1})
 $$
+
 $x_i$ means probability of the i pixel value given all previous pixels
 
 Complex distribution over pixel values $\Rightarrow$ Express using a neural
@@ -521,13 +522,13 @@ Generation must still proceed sequentially so it is still slow.
 
 Unsupervised approach for learning a lower-dimensional feature representation from unlabeled training data
 
-![](/img/Notes/2023-05/cs231n/image-20210605202316540.png)20210605202316540" style="zoom: 33%;" />
+![](/img/Notes/2023-05/cs231n/image-20210605202316540.png)
 
 After the training, you can throw away the decoders and using the encoder to initialize a supervised model. Based on this, we were able to use a lot of unlabeled training data to try and learn good general feature representations.
 
 **Variational Autoencoders (VAE)**
 
-![](/img/Notes/2023-05/cs231n/image-20210616152738229.png)20210616152738229" style="zoom:30%;" />
+![](/img/Notes/2023-05/cs231n/image-20210616152738229.png)
 
  **Generative Adversarial Networks (GAN)**
 
@@ -542,6 +543,7 @@ Generator network: try to fool the discriminator by generating real-looking imag
 $$
 \min_{\theta_g}\max_{\theta_d}[\mathbb{E}_{x\sim p_{data}}\log D_{\theta_d}(x)+\mathbb{E}_{z\sim p(z)}\log(1-D_{\theta_d}(G_{\theta_g}(z)))]
 $$
+
 $D_{\theta_d}(x)$ is the discriminator output for data x.
 
 $G_{\theta_g}(z)$ is generated fake data from $z$.
@@ -550,15 +552,15 @@ In practice, instead of minimizing likelihood of discriminator being correct, no
 
 GAN training algorithm
 
-![](/img/Notes/2023-05/cs231n/image-20210616141437357.png)20210616141437357" style="zoom:50%;" />
+![](/img/Notes/2023-05/cs231n/image-20210616141437357.png)
 
 Generative Adversarial Nets: Convolutional Architectures [Radford et al, ICLR 2016]
 
-![](/img/Notes/2023-05/cs231n/image-20210616151604869.png)20210616151604869" style="zoom:50%;" />
+![](/img/Notes/2023-05/cs231n/image-20210616151604869.png)
 
 Interpolating between random points in latent space [Radford et al, ICLR 2016]
 
-![](/img/Notes/2023-05/cs231n/image-20210616152347285.png)20210616152347285" style="zoom:37%;" />
+![](/img/Notes/2023-05/cs231n/image-20210616152347285.png)
 
 Also recent work in combinations of these types of models! E.g. Adversarial Autoencoders (Makhanzi 2015) and PixelVAE (Gulrajani 2016)
 
@@ -568,7 +570,7 @@ Also recent work in combinations of these types of models! E.g. Adversarial Auto
 
 **Goal**: Learn how to take actions in order to maximize reward
 
-![](/img/Notes/2023-05/cs231n/image-20210506231532938.png)20210506231532938" style="zoom:50%;" />
+![](/img/Notes/2023-05/cs231n/image-20210506231532938.png)
 
 **Examples**
 
@@ -607,58 +609,73 @@ At time step $t=0$, environment samples initial state $s_0 \sim p(s_0)$
 Then, for $t=0$ until done:
 
 -   Agent selects action $a_t$
--   Environment samples reward $r_t \sim R(\cdot |s_t, a_t)$
--   Environment samples next state $s_{t+1} \sim P(\cdot|s_t, a_t)$
+-   Environment samples reward $r_t \sim R(\cdot \|s_t, a_t)$
+-   Environment samples next state $s_{t+1} \sim P(\cdot\|s_t, a_t)$
 -   Agent receives reward $r_t$ and next state $s_{t+1}$
 
 A policy $ \pi$ is a function from S to A that specifies what action to take in each state.
 
 Objective: Find policy $\pi^*$ that maximizes cumulative discounted reward $\sum_{t\geq0}\gamma^tr_t$
+
 $$
 \pi^*=\arg\max_{\pi}\mathbb{E}[\sum_{t\geq0}\gamma^tr_t|\pi] \\
 s_0\sim p(s_0),\ a_t\sim \pi(\cdot|s_t),\ s_{t+1}\sim p(\cdot|s_t, a_t)
 $$
+
 **Value function**
 
 How good is a state?
 
 The value function at state $s$, is the expected cumulative reward from following the policy from state $s$:
+
 $$
 V^{\pi}(s) = \mathbb{E}[\sum_{t\geq0}\gamma^tr_t|s_0=s,\pi]
 $$
+
 **Q-value function**
 
 How good is a state-action pair?
 
 The Q-value function at state $s$ and action $a$, is the expected cumulative reward from taking action a in state s and then following the policy.
+
 $$
 Q^{\pi}(s,a) = \mathbb{E}[\sum_{t\geq0}\gamma^tr_t|s_0=s,a_0=a,\pi]
 $$
+
 **Bellman equation**
 
 The optimal Q-value function $Q^*$ is the maximum expected cumulative reward achievable from a given (state, action) pair:
+
 $$
 Q^{*}(s,a) = \max_\pi\mathbb{E}[\sum_{t\geq0}\gamma^tr_t|s_0=s,a_0=a,\pi]
 $$
+
 $Q^*$ satisfies the following Bellman equation:
+
 $$
 Q^*(s,a) = \mathbb{E}_{s'}\sim\epsilon[r+\gamma\max_{a'}Q^*(s',a')|s,a]
 $$
+
 The optimal policy $\pi^*$ corresponds to taking the best action in any state as specified by $Q^*$.
 
 Value iteration algorithm: Use Bellman equation as an iterative update
+
 $$
 Q_{i+1}(s,a) = \mathbb{E}[r+\gamma\max_{a'}Q_i(s',a')|s,a]
 $$
+
 $Q_i$ will converge to $Q^*$ as $i\rightarrow\inf$. However, it is not scalable because we must compute Q(s,a) for every state-action pair. If state is so much, computationally infeasible to compute for entire state space! This inspires us to using a function approximator to estimate Q(s,a), such as a neural network!
 
 **Q-Learning**
 
 Use a function approximator to estimate the action-value function. If the function approximator is a deep neural network, it will be called deep Q-learning.
+
 $$
 Q^*(s,a) = \mathbb{E}_{s'}\sim\epsilon [r+\gamma\max_{a'}Q^*(s',a')|s,a]
 $$
+
 Forward Pass
+
 $$
 L_i(\theta_i) = \mathbb{E}_{s,a\sim\rho(\cdot)}[(y_i-Q(s,a;\theta_i))^2]
 $$
@@ -668,10 +685,12 @@ y_i=\mathbb{E}_{s'}\sim\epsilon [r+\gamma\max_{a'}Q^*(s',a';\theta_{i-1})|s,a]
 $$
 
 Backward Pass
+
 $$
 \nabla_{\theta_i}L_i(\theta_i)=\mathbb{E}_{s,a\sim\rho(\cdot);s'}\sim\epsilon[r+\gamma\max_{a'}Q(s',a';\theta_{i=1})-Q(s,a;\theta_i)\nabla_{\theta_i}Q(s,a;\theta_i)]
 $$
-![](/img/Notes/2023-05/cs231n/image-20210530135417108.png)20210530135417108" style="zoom:50%;" />
+
+![](/img/Notes/2023-05/cs231n/image-20210530135417108.png)
 
 **Training the Q-network: Experience Replay**
 
@@ -679,28 +698,34 @@ $$
 
 - Train Q-network on random minibatches of transitions from the replay memory, instead of consecutive samples
 
-![](/img/Notes/2023-05/cs231n/image-20210530140207363.png)20210530140207363" style="zoom:50%;" />
+![](/img/Notes/2023-05/cs231n/image-20210530140207363.png)
 
 **Policy Gradients**
 
 Let’s define a class of parametrized policies: $\Pi=\{\pi_\theta, \theta\in\mathbb{R}^m\}$
 
-For each policy,define its value: $J(\theta)=\mathbb{E}[\sum_{t\ge0}\gamma^tr_t|\pi_\theta]$, we can use gradient ascent on policy parameters to find the optimal policy $\theta^*=\mathbb{E}[\sum_{t\geq0}\gamma^tr_t|\pi_\theta$ .
+For each policy,define its value: $J(\theta)=\mathbb{E}[\sum_{t\ge0}\gamma^tr_t\|\pi_\theta]$, we can use gradient ascent on policy parameters to find the optimal policy $\theta^*=\mathbb{E}[\sum_{t\geq0}\gamma^tr_t\|\pi_\theta]$ .
 
 We have:
+
 $$
 J(\theta)=\mathbb{E}_{\tau\sim p(\tau;\theta)}[r(\tau)]=\int_\tau r(\tau)p(\tau;\theta)d\tau
 $$
+
 where $r(\tau)$ is the reward of a trajectory $\tau=(s_0, a_0, r_0,s_1,\cdots)$
 
 Now we can derive the gradient with the respect to $\theta$:
+
 $$
 \nabla_\theta J(\theta)=\int_\tau r(\tau)\nabla_\theta p(\tau;\theta)d\tau \\\nabla_\theta p(\tau;\theta)=p(\tau;\theta)\frac{\nabla_\theta p(\tau;\theta)}{p(\tau;\theta)}=p(\tau;\theta)\nabla_\theta \log p(\tau;\theta)
 $$
+
 So we have:
+
 $$
 \nabla_\theta J(\theta)=\int_\tau (r(\tau)\nabla_\theta\log p(\tau;\theta))p(\tau;\theta)d\tau =\mathbb{E}_{\tau\sim p(\tau;\theta)}[r(\tau)\nabla_\theta\log p(\tau;\theta)] \\\log p(\tau;\theta)=\sum_{t\geq0}\log p(s_{t+1}|s_t, a_t) + \log \pi_{\theta}(a_t|s_t) \\\nabla_\theta J(\theta)\approx\frac{1}{N}\sum_{i=1}^N(r(\tau_i)\sum_{t\geq0}\nabla_\theta\log\pi_\theta(a_t|s_t))
 $$
+
 This means we can estimate this expectation using Monte Carlo sampling.
 
 **Variance reduction**
@@ -716,11 +741,11 @@ $$
 
 **Actor-Critic Algorithm**
 
-![](/img/Notes/2023-05/cs231n/image-20210530160602515.png)20210530160602515" style="zoom:50%;" />
+![](/img/Notes/2023-05/cs231n/image-20210530160602515.png)
 
 Reinforce in action: Recurrent Attention Model (RAM) [Mnih et al. 2014]
 
-![](/img/Notes/2023-05/cs231n/image-20210530162707746.png)20210530162707746" style="zoom:50%;" />
+![](/img/Notes/2023-05/cs231n/image-20210530162707746.png)
 
 AlphaGo [Silver et al., Nature 2016]
 
@@ -732,19 +757,18 @@ Improve the Efficiency of Deep Learning by Algorithm-Hardware Co-Design
 
 **Hardware family**: General Purpose/Specialized Hardware
 
-General Purpose: CPU: latency oriented and single threaded
-
-​								 GPU: throughout oriented
-
-Specialized Hardware: FPGA: field programmable gate array
-
-​                                           ASIC: application specific integrated circuit, fixed logic
+- General Purpose: CPU: latency oriented and single threaded
+- GPU: throughout oriented
+- Specialized Hardware: FPGA: field programmable gate array
+- ASIC: application specific integrated circuit, fixed logic
 
 **Number Representation**
+
 $$
 (-1)^s\times (1.M)\times 2^E
 $$
-![](/img/Notes/2023-05/cs231n/image-20210322194324126.png)20210322194324126" style="zoom:48%;" />
+
+![](/img/Notes/2023-05/cs231n/image-20210322194324126.png)
 
 Going from 32bit to 16bit, we have about four times reduction in energy and area.
 
@@ -752,21 +776,21 @@ Going from 32bit to 16bit, we have about four times reduction in energy and area
 
 Remove some of the weights and get rid of those redundant connections, but we can   still keep the accuracy.
 
-![](/img/Notes/2023-05/cs231n/image-20210322202721562.png)20210322202721562" style="zoom:50%;" />
+![](/img/Notes/2023-05/cs231n/image-20210322202721562.png)
 
 If we do this process iteratively by pruning and retraining, we can fully recover the accuracy not until we are prune away 90% of the parameters.
 
 **Weight Sharing**
 
-![](/img/Notes/2023-05/cs231n/image-20210322204745974.png)20210322204745974" style="zoom:50%;" />
+![](/img/Notes/2023-05/cs231n/image-20210322204745974.png)
 
 We do k-means clustering by having the similar weight sharing the same centroid. So that we only need to store the two bit index rather than 32 bit floating point number.
 
-![](/img/Notes/2023-05/cs231n/image-20210322205207635.png)20210322205207635" style="zoom: 43%;" />
+![](/img/Notes/2023-05/cs231n/image-20210322205207635.png)
 
 If we combine these two methods together, we can make the model about 3% of its original size without hurting the accuracy at all.
 
-![](/img/Notes/2023-05/cs231n/image-20210322205551068.png)20210322205551068" style="zoom:45%;" />
+![](/img/Notes/2023-05/cs231n/image-20210322205551068.png)
 
 So now we consider that can we begin with a compact model, and the answer is true.
 
@@ -789,7 +813,7 @@ For a convolution layer, you can break it into two convolution layers. For examp
 -   A layer with $d'$ filters $(k\times k\times c)$
 -   A layer with $d$ filters $(1\times 1\times d')$
 
-![](/img/Notes/2023-05/cs231n/image-20210323145439715.png)20210323145439715" style="zoom:50%;" />
+![](/img/Notes/2023-05/cs231n/image-20210323145439715.png)
 
 Achieving about 2x speed up, there’s almost no loss of accuracy.
 
@@ -799,7 +823,7 @@ For fully connected layers, we can use  tensor tree to break down one layer into
 
 We maintain a full precision weight during training time, but at inference time, we only keep the scaling factor and the ternary weight.
 
-![](/img/Notes/2023-05/cs231n/image-20210323150532397.png)20210323150532397" style="zoom:50%;" />
+![](/img/Notes/2023-05/cs231n/image-20210323150532397.png)
 
 **Winograd Transformation**
 
@@ -827,7 +851,7 @@ Hyper-parameter parallel
 
 **Mixed Precision with FP16 and FP32**
 
-![](/img/Notes/2023-05/cs231n/image-20210323155807235.png)20210323155807235" style="zoom:50%;" />
+![](/img/Notes/2023-05/cs231n/image-20210323155807235.png)
 
 Mixed precision training. *arXiv preprint arXiv:1710.03740 (2017)*.
 
@@ -847,9 +871,8 @@ Han, Song, et al. "DSD: Dense-sparse-dense training for deep neural networks." *
 
 **Hardware for Efficient Training**
 
-New in Volta: Tensor Core
-
-Google Cloud TPU
+- New in Volta: Tensor Core
+- Google Cloud TPU
 
 ## 16. Adversarial Examples and Adversarial Training
 
@@ -859,7 +882,7 @@ Google Cloud TPU
 
 An adversarial example is an example that has been carefully computed to be misclassified. In a lot of cases we are able to make the new image indistinguishable to a human observer from the original image.
 
-![](/img/Notes/2023-05/cs231n/image-20210116230150198.png)20210116230150198" style="zoom:67%;" />
+![](/img/Notes/2023-05/cs231n/image-20210116230150198.png)
 
 It is important to remember that these vulnerabilities apply to essentially every machine learning algorithm that we have studied so far. Some of them like RBF networks and partisan density estimators are able to resist this effect somewhat, but even very simple machine learning algorithms are highly vulnerable to adversarial examples, including Logistic regression and SVM.
 
@@ -873,18 +896,19 @@ The mapping from the input to the output is much more linear and predictable, wh
 
 We are able to get quite a large perturbation without changing the image very much as far as a human being is concerned. Here all three perturbations have L2 norm 3.96.
 
-![](/img/Notes/2023-05/cs231n/image-20210116235353038.png)20210116235353038" style="zoom:50%;" />
+![](/img/Notes/2023-05/cs231n/image-20210116235353038.png)
 
 Actually a lot of the time with adversarial examples, you make perturbations that have an even larger L2 norm. What’s going on is that there are several different pixels in the image, and so small changes to individual pixels can add up to relatively large vectors. For larger datasets like ImageNet, where there is more pixels, you can make very small changes to each pixel that travel very far in vector space as measured by L2 norm. That means you can actually make changes that are almost imperceptible but actually move you really far and get a large dot product with the coefficients of the linear function that the model represents.
 
 **The Fast Gradient Sign Method**
+
 $$
 J(\tilde{x}, \theta) \approx J(x,\theta) + (\tilde x - x)^T\nabla_xJ(x)
 $$
 
 $$
 max \hspace{1cm} J(x,\theta) + (\tilde x - x)^T\nabla_xJ(x) \\
-s.t. \hspace{1cm} ||\tilde x-x||_{\infin}\leq\epsilon
+s.t. \hspace{1cm} ||\tilde x-x||_{\infty}\leq\epsilon
 $$
 
 $$
@@ -893,13 +917,13 @@ $$
 
 The maps of  adversarial and random cross-sections
 
-![](/img/Notes/2023-05/cs231n/image-20210117002639240.png)20210117002639240" style="zoom:40%;" />
+![](/img/Notes/2023-05/cs231n/image-20210117002639240.png)
 
 Note that for the most part, the noise has very little effect on the classification decision compared to adversarial examples. Because if you choose some reference vector in some high dimensional spaces, and then you choose a random vector in that space, the random vector will, on average, have zero dot product with the reference vector.
 
 The dimensionality of the subspace where the adversarial examples lie in actually tells you something about how likely you are to find an adversarial example by generating random noise. The average dimensionality on MINIST dataset is 25.
 
-![](/img/Notes/2023-05/cs231n/image-20210117132735372.png)20210117132735372" style="zoom:40%;" />
+![](/img/Notes/2023-05/cs231n/image-20210117132735372.png)
 
 Different models will often mis-classify the same adversarial examples. The larger the dimensionality of the subspace, the more likely it is that the subspaces for two models will intersect.
 
@@ -913,29 +937,29 @@ Some quadratic models actually perform really well. In particular a shallow RBF 
 
 cross technique transferability
 
-![](/img/Notes/2023-05/cs231n/image-20210117134006464.png)20210117134006464" style="zoom: 33%;" />
+![](/img/Notes/2023-05/cs231n/image-20210117134006464.png)
 
 If the target model with unknown weights, machine learning algorithms and even train set, they can train their own model to do the attack. There is two different way, one is you can label your own training set for the same task that you want to attack. And the other is that you can send inputs to the model and observe its outputs, then use those as your training set. This will work even if the output that you get from the target model is only the class label that it chooses.
 
 **Adversarial Examples in the Human Brain**
 
-![](/img/Notes/2023-05/cs231n/image-20210117160557146.png)20210117160557146" style="zoom: 33%;" />
+![](/img/Notes/2023-05/cs231n/image-20210117160557146.png)
 
 Studying adversarial examples tells us how to significantly improve our existing machine learning models.
 
 **Practical Attack**
 
--   Fool real classifiers trained by remotely hosted API (MetaMind, Amazon, Google)
--   Fool malware detector networks
--   Display adversarial examples in the physical world and fool machine learning systems that perceive them through a camera (Kurakin et al, 2016)
+-  Fool real classifiers trained by remotely hosted API (MetaMind, Amazon, Google)
+-  Fool malware detector networks
+-  Display adversarial examples in the physical world and fool machine learning systems that perceive them through a camera (Kurakin et al, 2016)
 
-![](/img/Notes/2023-05/cs231n/image-20210117161914323.png)20210117161914323" style="zoom:50%;" />
+![](/img/Notes/2023-05/cs231n/image-20210117161914323.png)
 
 The attacker could conceivably fool a system that’s deployed in a physical agent, even if they don’t have access to the model on that agent and even if they can’t interface directly with th agent but just modify objects that it can see in its environment.
 
 **Training on Adversarial Examples**
 
-![](/img/Notes/2023-05/cs231n/image-20210117164658532.png)20210117164658532" style="zoom: 33%;" />
+![](/img/Notes/2023-05/cs231n/image-20210117164658532.png)
 
 Adversarial trained neural nets have the best empirical success rate on adversarial examples of any machine learning model. SVM or linear regression cannot learn a step function, so adversarial training is less useful, very similar to weight decay.
 
