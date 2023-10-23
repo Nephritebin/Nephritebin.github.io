@@ -538,8 +538,9 @@ Instead sample from complex, high-dimensional training distribution, GAN will sa
 
 Train GANs: Two-player game
 
-Generator network: try to fool the discriminator by generating real-looking images
-		Discriminator network: try to distinguish between real and fake images
+- Generator network: try to fool the discriminator by generating real-looking images
+- Discriminator network: try to distinguish between real and fake images
+
 $$
 \min_{\theta_g}\max_{\theta_d}[\mathbb{E}_{x\sim p_{data}}\log D_{\theta_d}(x)+\mathbb{E}_{z\sim p(z)}\log(1-D_{\theta_d}(G_{\theta_g}(z)))]
 $$

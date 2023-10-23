@@ -69,7 +69,7 @@ Yubin 的 Blog 就这么开通了。
 ![5 centimeters per second](/img/Notes/2022-09/head-5-seconds.jpg)
 ```
 
-之后你就可以看到这样的一张图，注意小括号里面是全局路径，一般保存在博客源文件的 image 文件夹下，我按月份分类保存。目前暂时还没有研究出来怎么调整生成的网页中图片的大小和等比例，有知道的可以戳我。
+之后你就可以看到这样的一张图，注意小括号里面是全局路径，一般保存在博客源文件的 image 文件夹下，我按月份分类保存。我现在有点担心随着博客规模的增大，图片过多导致仓库放不下，之后可能会想办法解决这个问题。
 
 ![Violet](/img/Notes/2022-09/head-5-seconds.jpg)
 
@@ -95,7 +95,13 @@ A = I = \left [ \begin{matrix}
 \end{matrix} \right ]
 $$
 
-如果你的图片插入和 Latex 渲染没问题，那这个博客的功能已经足够了，剩下的就是 Markdown 语法的东西了。如果对语法不是很熟悉的话，可以去参考一下这个 [Markdown Guide](https://www.markdownguide.org/basic-syntax/)，不过只要能够多写自然就会慢慢变得熟练起来了。一些更加进阶的功能包括利用原生的`HTML`语言插入 Bilibili 或者 Youtube 的视频，视频下方的分享按钮可以复制嵌入的代码，例如
+如果你的图片插入和 Latex 渲染没问题，那这个博客的功能已经足够了，剩下的就是 Markdown 语法的东西了。如果对语法不是很熟悉的话，可以去参考一下这个 [Markdown Guide](https://www.markdownguide.org/basic-syntax/)，不过只要能够多写自然就会慢慢变得熟练起来了。
+
+## 进阶与前端
+
+一些更进阶的玩法包括在 Markdown 中嵌入 `HTML` 代码，进而修改文字，图片与视频的格式。由于我自己对前端了解也不多，因此这一部分就一边探索一边更新。
+
+利用原生的`HTML`语言, 我们可以插入 Bilibili 或者 Youtube 的视频，视频下方的分享按钮可以复制嵌入的代码，例如
 
 ```html
 <iframe width="640" height="360" src="https://www.youtube.com/embed/M41ID8tLAWU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -104,5 +110,23 @@ $$
 可以插入 Youtube 的视频， 效果如下所示，快来和我一起看胡桃 (˵¯͒ བ¯͒˵)：
 
 <iframe width="640" height="360" src="https://www.youtube.com/embed/M41ID8tLAWU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+利用下面的代码模板，可以插入带有文字描述的图片，调整图片的大小与位置。可以根据自己喜好修改字体，图片文字距离，字号等等参数。注意图片的路径与 Markdown 中插入时不同。
+
+```html
+<figure>
+    <img width=500 align="middle" src="{{ site.baseurl }}/img/Notes/2022-09/ganyu.png" style="margin-top: 0px; margin-bottom: 5px"/>
+    <div style="font-family: Georgia, sans-serif; font-size: 12px; text-align: center; margin-top: 0px;">
+    甘雨可爱，贴贴 </div>
+</figure>
+```
+
+效果如下所示
+
+<figure>
+    <img width=500 align="middle" src="{{ site.baseurl }}/img/Notes/2022-09/ganyu.png" style="margin-top: 0px; margin-bottom: 5px"/>
+    <div style="font-family: Georgia, sans-serif; font-size: 12px; text-align: center; margin-top: 0px;">
+    甘雨可爱，贴贴 </div>
+</figure>
 
 让我们一起愉快地玩耍吧~
