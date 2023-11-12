@@ -8,7 +8,6 @@ header-img: "img/Headers/231415165.bmp"
 mathjax: true
 catalog: true
 tags:
-    - Robotics
     - Math
     - Lie Algebra
 ---

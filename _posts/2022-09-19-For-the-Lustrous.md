@@ -107,8 +107,8 @@ $$
 
 ```html
 <figure>
-    <img width=500 align="middle" src="https://onedrive.live.com/embed?resid=F7F75CDEDD2EF73D%21240201&authkey=%21AAogQ6Z8rlJkir0&width=2560&height=1440" style="margin-top: 0px; margin-bottom: 5px"/>
-    <div style="font-family: Georgia, sans-serif; font-size: 12px; text-align: center; margin-top: 0px;">
+    <img width="80%" align="middle" src="https://onedrive.live.com/embed?resid=F7F75CDEDD2EF73D%21240201&authkey=%21AAogQ6Z8rlJkir0&width=2560&height=1440" style="margin-top: 0px; margin-bottom: 5px"/>
+    <div style="font-family: STXingkai, sans-serif; font-size: 12px; text-align: center; margin-top: 0px;">
     甘雨可爱，贴贴 </div>
 </figure>
 ```
