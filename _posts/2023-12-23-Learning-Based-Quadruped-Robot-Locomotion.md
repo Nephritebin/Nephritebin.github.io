@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      "Learning-based quadruped robot visual locomotion"
-subtitle:   " \"Citius, Altius, Fortius – Communiter\""
+subtitle:   " \"Citius, Altius, Fortius\""
 date:       2023-12-23 12:00:00
 author:     "Yubin"
 header-img: "img/Headers/yoru.jpg"
