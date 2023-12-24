@@ -90,6 +90,7 @@ However, one of the problems is that the policy may drift away from the expert's
 </figure>
 
 # Two-stage training framework
+# Conclusion
 
 <!-- ---------------------------------------------------------------------------------------- -->
 # References
