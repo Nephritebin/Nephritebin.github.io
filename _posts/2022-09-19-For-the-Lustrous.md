@@ -231,4 +231,19 @@ $$
 <iframe src="https://onedrive.live.com/embed?resid=F7F75CDEDD2EF73D%21240452&authkey=!AIJlFS5mbpKmT0Y&em=2" frameborder="0" scrolling="no"></iframe>
 </div>
 
+### 插入参考文献
+我们可以使用`bib`文件和Jekyll-scholar插件来插入参考文献。具体做法可以参考[这个链接](https://open-research.gemmadanks.com/tutorials/how-to-use-jekyll-scholar-with-github-pages/)，它的配置在`_config.yml`中，我自己的配置如下：
+
+```yml
+plugins:
+  - jekyll-paginate
+  - jekyll-scholar
+
+# Jekyll Scholar settings
+scholar:
+  style: current-opinion
+  source: _assets/bib
+  bibliography: rinko.bib
+```
+
 让我们一起愉快地玩耍吧~
