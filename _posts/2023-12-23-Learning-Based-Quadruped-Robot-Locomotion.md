@@ -154,7 +154,7 @@ On the other hand, in monolithic architecture {% cite agarwal2023legged %}, they
 <figure>
     <img width="80%" align="middle" src="/img/Notes/2023-12/RMA.png" style="margin-top: 0px; margin-bottom: 5px"/>
     <div style="font-size: 12px; text-align: start; margin-top: 0px;">
-    The comparison between RMA architecture {% cite kumar2021rma $} and monolithic architecture {% cite agarwal2023legged %}. Here, $\textbf{m}_t$ is the elevation map, $\textbf{x}_t$ is the robot proprioceptive state, $\textbf{d}_t$ is the ego depth visual input, $\textbf{e}_t$ is the simulation environment parameters, and $\textbf{a}_t$ is the target action.
+    The comparison between RMA architecture {% cite kumar2021rma %} and monolithic architecture {% cite agarwal2023legged %}. Here, $\textbf{m}_t$ is the elevation map, $\textbf{x}_t$ is the robot proprioceptive state, $\textbf{d}_t$ is the ego depth visual input, $\textbf{e}_t$ is the simulation environment parameters, and $\textbf{a}_t$ is the target action.
     </div>
 </figure>
 
@@ -218,7 +218,7 @@ Previous sections show the two-stage training framework accomplishes highly robu
 
 Parkour is a popular athletic sport that involves humans traversing obstacles in a highly dynamic manner, like running on walls and ramps, long coordinated jumps, and high jumps across obstacles. Boston Dynamics [Atlas robots](https://bostondynamics.com/atlas/) have demonstrated stunning parkour skills using model predictive control (MPC). However, massive engineering efforts are needed for modeling the robot and its surrounding environments. 
 
-In {% cite zhuang2023robot %}, researchers follow the two-stage training process in Section 2 to train an end-to-end vision-based parkour skill, including climbing over high obstacles, leaping over large gaps, crawling beneath low barriers, squeezing through thin slits, and running. The privileged visual information includes the distance from the robot's current position to the obstacle in front of the robot, the height of the obstacle, the width of the obstacle, and a 4-dimensional one-hot category representing the four types of skills, which is illustrated in the following figure. The four kinds of specialized skill policies $\pi_{\{\text{climb, leap, crawl, tilt}\}}$, which are formulated as GRU, are trained on corresponding terrains. 
+In {% cite zhuang2023robot %}, researchers follow the two-stage training process in Section 3 to train an end-to-end vision-based parkour skill, including climbing over high obstacles, leaping over large gaps, crawling beneath low barriers, squeezing through thin slits, and running. The privileged visual information includes the distance from the robot's current position to the obstacle in front of the robot, the height of the obstacle, the width of the obstacle, and a 4-dimensional one-hot category representing the four types of skills, which is illustrated in the following figure. The four kinds of specialized skill policies $\pi_{\{\text{climb, leap, crawl, tilt}\}}$, which are formulated as GRU, are trained on corresponding terrains. 
 
 <figure>
     <img width="90%" align="middle" src="/img/Notes/2023-12/parkour2.png" style="margin-top: 0px; margin-bottom: 5px"/>
@@ -238,7 +238,7 @@ $$
 \end{align*}
 $$
 
-, which follows the definition in Section 2.
+, which follows the definition in Section 3.
 
 In another work concurrently, researchers propose oracle heading to assist direction with inquiry during oracle policy training in another parkour task {% cite cheng2023extreme %}. The red dots in training framework phase 1 denote the waypoints used to compute directions $\hat{\textbf{d}}_w$ on the terrain as:
 
@@ -260,7 +260,7 @@ $$
 
 , where $c_i$ is $1$ if ith foot touches the ground. $M$ is a boolean function which is 1 if the point $p_i$ lies within 5cm of an edge. $p_i$ is the foot position for each leg.
 
-Distilling the direction and exteroception of {% cite cheng2023extreme %} also follows the process in Section 2 using RMA architecture and DAgger algorithm, and the framework is illustrated in the following figure. However, since directly using the predicted heading direction may cause catastrophic failure, they use a mixture of teacher and student. The heading direction sent to the student policy $\theta$ is defined as:
+Distilling the direction and exteroception of {% cite cheng2023extreme %} also follows the process in Section 3 using RMA architecture and DAgger algorithm, and the framework is illustrated in the following figure. However, since directly using the predicted heading direction may cause catastrophic failure, they use a mixture of teacher and student. The heading direction sent to the student policy $\theta$ is defined as:
 
 $$
 \begin{align*}
@@ -294,7 +294,7 @@ After training the robot to walk or run across challenging terrains, researchers
     </div>
 </figure>
 
-In this research, they decouple the problem into locomotion policy $\pi_l$ to walk and a policy to manipulate with legs $\pi_m$ because walking and manipulation using legs include drastically different joint angle behaviors. Again, these two policies are also trained using the two-stage training framework in Section 2. However, the manipulation policy's goal is to follow a desired end-effector position $p^{cmd}_{foot}(t) = [p_x(t), p_y(t), p_z(t)]^T$ such that the foot can track any arbitrary pre-planned trajectory. Therefore, they added a position-tracking reward during oracle manipulation policy training.
+In this research, they decouple the problem into locomotion policy $\pi_l$ to walk and a policy to manipulate with legs $\pi_m$ because walking and manipulation using legs include drastically different joint angle behaviors. Again, these two policies are also trained using the two-stage training framework in Section 3. However, the manipulation policy's goal is to follow a desired end-effector position $p^{cmd}_{foot}(t) = [p_x(t), p_y(t), p_z(t)]^T$ such that the foot can track any arbitrary pre-planned trajectory. Therefore, they added a position-tracking reward during oracle manipulation policy training.
 
 In real-world deployments, they combine the above-learned skills from only one demonstration. Note this single long-range demonstration is only in the high-level action space where the human chooses what skill to follow and when the low-level control is taken care of by the skills $\pi_m, \pi_l$ learned above. They distill this single demonstration into a behavior tree to learn to complete the task robustly.
 
