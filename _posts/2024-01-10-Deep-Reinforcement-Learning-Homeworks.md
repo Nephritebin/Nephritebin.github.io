@@ -2,11 +2,12 @@
 layout:     post
 title:      "Reinforcement learning"
 subtitle:   "Implementations and comparisons"
-date:       2024-03-01 12:00:00
+date:       2024-01-01 12:00:00
 author:     "Yubin"
 header-img: "img/Headers/mountains.jpg"
 mathjax: true
 catalog: true
+published: false
 tags:
     - Reinforcement Learning
     - Deep Learning
@@ -126,7 +127,7 @@ Then we do more test for the number of gradient steps for training policy based 
 <figure>
     <img width="50%" align="middle" src="/img/Notes/2024-01/average_bc.png" style="margin-top: 0px; margin-bottom: 5px"/>
     <img width="50%" align="middle" src="/img/Notes/2024-01/std_bc.png" style="margin-top: 0px; margin-bottom: 5px"/>
-    <div style="font-size: 12px; text-align: start; margin-top: 0px;">
+    <div style="font-size: 12px; text-align: center; margin-top: 0px;">
     The average and std of evaluation return using behavior cloning with different number of gradient steps for training policy.
     </div>
 </figure>
@@ -134,4 +135,12 @@ Then we do more test for the number of gradient steps for training policy based 
 While average performance seems to be quite good, the standard deviation over the course of training is a bit more telling, as is the min/max returns. The agent continues to have trials where it makes a mistake and is unable to recover, resulting in a terrible rollout and a large standard deviation. If the agent was really learning to perform well in the environment we would see the standard deviation fall as it begins to consistently do well. This perfectly illustrates the weaknesses of behavioral cloning.
 
 ### 1.3. DAgger
+
+<figure>
+    <img width="50%" align="middle" src="/img/Notes/2024-01/dagger_average.png" style="margin-top: 0px; margin-bottom: 5px"/>
+    <img width="50%" align="middle" src="/img/Notes/2024-01/dagger_std.png" style="margin-top: 0px; margin-bottom: 5px"/>
+    <div style="font-size: 12px; text-align: center; margin-top: 0px;">
+    The average and std of evaluation return using DAgger in different iterations.
+    </div>
+</figure>
 
