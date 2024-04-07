@@ -2,8 +2,10 @@ Hey, welcome to this website. I am Yubin Liu, a Ph.D candidate in [3D Vision Lab
 
 I'm a person who likes anime. My favorite animation is land of the lustrous, which is also the name of this website. Other series I like include K-ON, Violet Evergarden, 5 Centimeters Per Second and recently Laid-Back Camp. You may find that I am a fan of Kyoto Animation Company, since I use a lot of images from there animations to be the covers of my blogs. In addition, I enjoy playing 'Genshin Impact'. My favorite characters are Ganyu, Yoimiya, and, more recently, Furina, who are just like my Waifu**s** ,,Ծ‸Ծ,,.
 
-During my free time, I love to travel and explore new places, especially museums. As I am currently residing in Japan, I have taken full advantage of this opportunity and have traveled to some of the most breathtaking destinations in the country including Kyoto, Nagoya, Hokkaido, Hamamatsu and Kanazawa. Here is one of my favorite photo taken by my friend at Tenku Torii, Kawaguchi Lake, Japan. Another is taken by [Mio Kagura](https://kagurua.com/) in Chichibu, Saitama, Japan.
+During my free time, I love to travel and explore new places, especially museums. As I am currently residing in Japan, I have taken full advantage of this opportunity and have traveled to some of the most breathtaking destinations in the country including Kyoto, Nagoya, Hokkaido, Hamamatsu and Kanazawa. Here are some of my photos taken by my friends at Tenku Torii, Yamanashi; Chichibu, Saitama by [Mio Kagura](https://kagurua.com/); and Shinjuku, Tokyo by [Douge Fu](https://dougefla.github.io/).
 
 ![Mountain Fuji](/img/Interests/fujisan.jpg)
 
 ![Chichibu](/img/Interests/chichibu.jpg)
+
+![Shinjuku](/img/Interests/sakura.jpg)
