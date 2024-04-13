@@ -1,11 +1,7 @@
-Hey, welcome to this website. I am Yubin Liu, a Ph.D candidate in [3D Vision Lab](https://www.cvl.iis.u-tokyo.ac.jp/), EEIS, the University of Tokyo supervised by Prof. Takeshi Oishi. I am also selected as the member of [WINGS-CFS program](https://cfs.t.u-tokyo.ac.jp/) with full scholarship. I got my bachelor degree at Zhejiang University, China in 2021. My research topic includes robotics, planning and reinforcement learning. If you want to contact me, please feel free to send email to `yubinliu925@gmail.com` . 
+Hey, welcome to this website. I am Yubin Liu, a Ph.D candidate in [3D Vision Lab](https://www.cvl.iis.u-tokyo.ac.jp/), EEIS, the University of Tokyo supervised by Prof. Takeshi Oishi. I am also selected as the member of [WINGS-CFS program](https://cfs.t.u-tokyo.ac.jp/) with full scholarship. I got my bachelor degree at Zhejiang University, China in 2021. My research topic includes robotics, planning and reinforcement learning. If you want to contact me, please feel free to send emails to `yubinliu925@gmail.com` . 
 
 I'm a person who likes anime. My favorite animation is land of the lustrous, which is also the name of this website. Other series I like include K-ON, Violet Evergarden, 5 Centimeters Per Second and recently Laid-Back Camp. You may find that I am a fan of Kyoto Animation Company, since I use a lot of images from there animations to be the covers of my blogs. In addition, I enjoy playing 'Genshin Impact'. My favorite characters are Ganyu, Yoimiya, and, more recently, Furina, who are just like my Waifu**s** ,,Ծ‸Ծ,,.
 
-During my free time, I love to travel and explore new places, especially museums. As I am currently residing in Japan, I have taken full advantage of this opportunity and have traveled to some of the most breathtaking destinations in the country including Kyoto, Nagoya, Hokkaido, Hamamatsu and Kanazawa. Here are some of my photos taken by my friends at Tenku Torii, Yamanashi; Chichibu, Saitama by [Mio Kagura](https://kagurua.com/); and Shinjuku, Tokyo by [Douge Fu](https://dougefla.github.io/).
+During my free time, I love to travel and explore new places, especially museums. As I am currently residing in Japan, I have taken full advantage of this opportunity and have traveled to some of the most breathtaking destinations in the country including Kyoto, Nagoya, Hokkaido, Hamamatsu and Kanazawa. Here is one of my favourite photos taken by my friends at Tenku Torii, Yamanashi, Japan.
 
 ![Mountain Fuji](/img/Interests/fujisan.jpg)
-
-![Chichibu](/img/Interests/chichibu.jpg)
-
-![Shinjuku](/img/Interests/sakura.jpg)
