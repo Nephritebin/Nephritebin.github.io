@@ -107,7 +107,7 @@ $$
 
 ```html
 <figure>
-    <img width="80%" align="middle" src="https://1drv.ms/i/s!Aj33Lt3eXPf3jtIW5Uei_L3L2UDp6w?e=A3JFiz" style="margin-top: 0px; margin-bottom: 5px"/>
+    <img width="80%" align="middle" src="https://1drv.ms/i/s!Aj33Lt3eXPf3jtIW4X1_fjaW0Qm6lQ?e=EvQmdo" style="margin-top: 0px; margin-bottom: 5px"/>
     <div style="font-family: STXingkai, sans-serif; font-size: 12px; text-align: center; margin-top: 0px;">
     甘雨可爱，贴贴 </div>
 </figure>
@@ -116,7 +116,7 @@ $$
 效果如下所示
 
 <figure>
-    <img width="80%" align="middle" src="https://1drv.ms/i/s!Aj33Lt3eXPf3jtIW5Uei_L3L2UDp6w?e=A3JFiz" style="margin-top: 0px; margin-bottom: 5px"/>
+    <img width="80%" align="middle" src="https://1drv.ms/i/s!Aj33Lt3eXPf3jtIW4X1_fjaW0Qm6lQ?e=EvQmdo" style="margin-top: 0px; margin-bottom: 5px"/>
     <div style="font-family: STXingkai, sans-serif; font-size: 12px; text-align: center; margin-top: 0px;">
     甘雨可爱，贴贴 </div>
 </figure>
@@ -166,7 +166,7 @@ $$
 
 {% 
     include responsive_image.html 
-    src="https://1drv.ms/i/s!Aj33Lt3eXPf3jtIW5Uei_L3L2UDp6w?e=A3JFiz" 
+    src="https://1drv.ms/i/s!Aj33Lt3eXPf3jtIW4X1_fjaW0Qm6lQ?e=EvQmdo" 
     caption="甘雨可爱，贴贴" 
     width="80%" 
 %}
