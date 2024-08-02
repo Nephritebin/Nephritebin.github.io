@@ -48,6 +48,13 @@ Yubin 的 Blog 就这么开通了。
    ```bash
     jekyll serve
    ```
+
+   或者有时候你需要：
+
+    ```bash
+    bundle exec jekyll serve
+    ```
+
    如果能够在 `http://127.0.0.1:4000/` 端口看到你的网页，那么恭喜你，环境的配置已经完成了。 如果你遇到报错信息例如`Bundler::GemNotFound`之类的，不要慌，可以尝试采用这个命令，自己在进行以下操作后成功完成环境配置（参考来源于[这个链接](https://stackoverflow.com/questions/17599717/rails-bundlergemnotfound)）：
 
    ```bash
