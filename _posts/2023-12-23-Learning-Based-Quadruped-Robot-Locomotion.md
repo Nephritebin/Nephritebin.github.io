@@ -8,7 +8,7 @@ header-img: "img/Headers/yoru.jpg"
 mathjax: true
 catalog: true
 scholar:
-    bibliography: rinko.bib
+    bibliography: rinko_1.bib
 tags:
     - Reinforcement Learning
     - Robotics
@@ -16,6 +16,8 @@ tags:
 ---
 
 This is a summary of my presentation in my first Rinko at the University of Tokyo. Rinko (輪講) is a course for each graduate student to join mandatorily until their graduation in the EEIS Department. In this course, students need to prepare a presentation each semester to show their survey of research topics, research progress, and results. In my first Rinko, I chose the topic of **learning-based quadruped robot visual locomotion**.
+
+***
 
 # Abstract
 
